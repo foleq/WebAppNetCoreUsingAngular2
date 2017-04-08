@@ -29,8 +29,8 @@ bld/
 libs/
 typings/
 
-wwwroot/app/**.js
-wwwroot/app/**.js.map
+**/wwwroot/app/**.js
+**/wwwroot/app/**.js.map
 # MSTest test Results
 [Tt]est[Rr]esult*/
 [Bb]uild[Ll]og.*
