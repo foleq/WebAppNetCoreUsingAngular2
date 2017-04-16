@@ -1,6 +1,6 @@
 ﻿import { Component } from '@angular/core';
 import { CarPart } from './car-part';
-import { CARPARTS } from './mocks';
+import { RacingDataService } from './racing-data.service'; 
 
 @Component({
     selector: 'car-parts',
@@ -11,10 +11,13 @@ export class CarPartsComponent {
 
     carParts: CarPart[];
 
+    constructor(private racingDataService: RacingDataService) {
+    }
+
     // invoked after the component is constructed and 
     // is the best place to initialize property values
     ngOnInit() {
-        this.carParts = CARPARTS;
+        this.carParts = this.racingDataService.getCarParts();
     }
 
     downQuantity(carPart) {

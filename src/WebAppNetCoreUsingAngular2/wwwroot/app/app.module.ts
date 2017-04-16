@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { CarPartsComponent } from './car-parts.component';
+import { RacingDataService } from './racing-data.service';
 
 @NgModule({
     imports: [BrowserModule, FormsModule], // Loads required dependencies to launch our app in the browser
@@ -11,6 +12,7 @@ import { CarPartsComponent } from './car-parts.component';
         AppComponent,
         CarPartsComponent
     ],
-    bootstrap: [AppComponent] // Indicates our root component
+    bootstrap: [AppComponent], // Indicates our root component
+    providers: [RacingDataService]
 })
 export class AppModule { }
