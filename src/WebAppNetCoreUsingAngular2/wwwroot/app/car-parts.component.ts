@@ -17,6 +17,18 @@ export class CarPartsComponent {
         this.carParts = CARPARTS;
     }
 
+    downQuantity(carPart) {
+        if (carPart.quantity != 0) {
+            carPart.quantity--;
+        }
+    }
+
+    upQuantity(carPart: CarPart) {
+        if (carPart.quantity < carPart.inStock) {
+            carPart.quantity++;
+        }
+    }
+
     totalCarParts() {
         let sum = 0;
         for (let carPart of this.carParts) {
@@ -24,5 +36,13 @@ export class CarPartsComponent {
         }
         return sum;
         // return this.carParts.reduce((prev, current) => prev + current.inStock, 0); // Simplifer
+    }
+
+    showKey(event) {
+        alert(event.keyCode);
+    }
+
+    getCoord(event) {
+        console.log(event.clientX + ", " + event.clientY);
     }
 }
