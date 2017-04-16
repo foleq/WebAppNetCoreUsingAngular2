@@ -1,7 +1,7 @@
 ﻿import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser'; // Module needed for running Angular websites
 import { AppComponent } from './app.component';
-import { CarPartsComponent } from './car.parts.component';
+import { CarPartsComponent } from './car-parts.component';
 
 
 @NgModule({
