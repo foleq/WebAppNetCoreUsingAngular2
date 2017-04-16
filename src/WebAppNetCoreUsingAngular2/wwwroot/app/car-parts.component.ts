@@ -17,7 +17,8 @@ export class CarPartsComponent {
     // invoked after the component is constructed and 
     // is the best place to initialize property values
     ngOnInit() {
-        this.carParts = this.racingDataService.getCarParts();
+        this.racingDataService.getCarParts()
+            .subscribe(carParts => this.carParts = carParts); 
     }
 
     downQuantity(carPart) {
@@ -34,8 +35,10 @@ export class CarPartsComponent {
 
     totalCarParts() {
         let sum = 0;
-        for (let carPart of this.carParts) {
-            sum += carPart.inStock;
+        if (Array.isArray(this.carParts)) {
+            for (let carPart of this.carParts) {
+                sum += carPart.inStock;
+            }
         }
         return sum;
         // return this.carParts.reduce((prev, current) => prev + current.inStock, 0); // Simplifer
