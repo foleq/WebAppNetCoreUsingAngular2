@@ -3,8 +3,8 @@ import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
     selector: 'app-detail',
-    templateUrl: './detail.component.html',
-    styleUrls: ['./detail.component.css']
+    templateUrl: 'app/race-detail/detail/detail.component.html',
+    styleUrls: ['app/race-detail/detail/detail.component.css']
 })
 export class DetailComponent implements OnInit {
 

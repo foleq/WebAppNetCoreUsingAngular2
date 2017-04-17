@@ -3,8 +3,8 @@ import { RacesComponent } from '../races/races.component';
 
 @Component({
     selector: 'race',
-    templateUrl: 'app/race/race.component.html',
-    styleUrls: ['app/race/race.component.css']
+    templateUrl: 'app/race-list/race/race.component.html',
+    styleUrls: ['app/race-list/race/race.component.css']
 })
 export class RaceComponent implements OnInit {
 
