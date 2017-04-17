@@ -31,10 +31,6 @@ export class RacesComponent {
         return sum;
     }
 
-    castDate(date) {
-        return new Date(date);
-    }
-
     cashLeft() {
         return this.cash - this.totalCost();
     }

@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { RacesComponent } from './races/races.component';
 import { RaceService } from './races/race.service';
+import { RaceComponent } from './race/race.component';
 
 @NgModule({
     imports: [
@@ -15,7 +16,8 @@ import { RaceService } from './races/race.service';
     ], // Loads required dependencies to launch our app in the browser
     declarations: [
         AppComponent,
-        RacesComponent
+        RacesComponent,
+        RaceComponent
     ],
     bootstrap: [AppComponent], // Indicates our root component
     providers: [
