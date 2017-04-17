@@ -1,27 +1,27 @@
 ﻿import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser'; // Module needed for running Angular websites
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { RouterModule } from '@angular/router';
+
+import { RaceListModule } from './race-list/race-list.module';
 
 import { AppComponent } from './app.component';
-import { RacesComponent } from './races/races.component';
-import { RaceService } from './races/race.service';
-import { RaceComponent } from './race/race.component';
+import { RacesComponent } from './race-list/races/races.component';
+import { DetailComponent } from './race-detail/detail/detail.component';
 
 @NgModule({
     imports: [
         BrowserModule,
-        FormsModule,
-        HttpModule
+        RaceListModule,
+        RouterModule.forRoot([
+            { path: '', redirectTo: '/races', pathMatch: 'full' },
+            { path: 'races', component: RacesComponent },
+            { path: 'races/:id', component: DetailComponent },
+        ])
     ], // Loads required dependencies to launch our app in the browser
     declarations: [
         AppComponent,
-        RacesComponent,
-        RaceComponent
+        DetailComponent,
     ],
-    bootstrap: [AppComponent], // Indicates our root component
-    providers: [
-        RaceService
-    ]
+    bootstrap: [AppComponent] // Indicates our root component
 })
 export class AppModule { }
